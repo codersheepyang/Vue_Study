@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/vue.js">
+        
+    </script>
+    <style>
+        .basic{
+            width: 400px;
+            height: 100px;
+            border: 1px solid;
+        }
+        .wh1{
+            width: 1;
+        }
+        .wh2{
+            width: 1;
+        }
+        .wh3{
+            width: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div class="basic" :class="mood" @click="changeMood">{{name}}</div>
+        <br/>
+        <div class="basic" :class="classArr" >{{name}}</div>
+        <br/>
+        <div class="basic" :class="classObj" >{{name}}</div>
+    </div>
+</body>
+<script type="text/javascript">
+    const vm = new Vue({
+        el:'#root',
+        data:{
+            name:'Warehouse',
+            mood:'normal',
+            classArr:['wh1','wh2','wh3'],
+            classObj:{
+                wh1:false,
+                wh2:false
+            }
+        },
+        methods: {
+            changeMood(){
+                this.mood = "wh1"
+            }
+        },
+    })
+</script>
+</html>
